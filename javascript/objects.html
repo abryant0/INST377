@@ -38,15 +38,20 @@ function Square (width, height, color, classname){
 		sq.style.background = this.background;
 	}
 	// Task 3
-}
 
-s1 = new Square("200px", "50px", "grey", "square")
+	Square.prototype.putText = function(t, c){
+		sq.innerHTML = t
+		sq.style.color = c
+	}
+}
+	
+s1 = new Square("200px", "50px", "gray", "square")
 
 
 // Task 1
 
 // Task 2
-
+s2 = new Square("100px", "100px", "blue", "square")
 
 </script>
 
