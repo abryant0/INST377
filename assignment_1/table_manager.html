@@ -222,62 +222,62 @@ var organizations = [
             element_id.appendChild(org_table);
        
        
-        function columns(data_elements, row_id) {
+        function createRow(row_id) {
+            var table_createRow = document.createElement("TR");
+            table_createRow.setAttribute("id", row_id);
+            org_table.appendChild(table_createRow);
+        }
+        
+        function createColumn(data_elements, row_id) {
             var table_cols = document.createElement("TD");
             var text = document.createTextNode(data_elements);
             table_cols.appendChild(text);
-            table_rows = document.getElementById(row_id);
-            table_rows.appendChild(table_cols);
+            table_createRow = document.getElementById(row_id);
+            table_createRow.appendChild(table_cols);
         }
 
-         function rows(row_id) {
-            var table_rows = document.createElement("TR");
-            table_rows.setAttribute("id", row_id);
-            org_table.appendChild(table_rows);
-        }
+         
        
         function main(){
-            rows("0");
-            columns("Region","0");
-            columns("Country","0");
-            columns("Country Income Level","0");
-            columns("Organization Name","0");
-            columns("Organization Type","0");
-            columns("Sectors","0");
-            columns("Description","0");
-            columns("City","0");
-            columns("State/Region","0");
-            columns("Founding Year","0");
-            columns("Size","0");
-            columns("Type of Data Used","0");
-            columns("profileID","0");
+            createRow("0");
+            createColumn("Region","0");
+            createColumn("Country","0");
+            createColumn("Country Income Level","0");
+            createColumn("Organization Name","0");
+            createColumn("Organization Type","0");
+            createColumn("Sectors","0");
+            createColumn("Description","0");
+            createColumn("City","0");
+            createColumn("State/Region","0");
+            createColumn("Founding Year","0");
+            createColumn("Size","0");
+            createColumn("Type of Data Used","0");
+            createColumn("profileID","0");
            
             //console.log(organizations[0].keys);
             
-            i = 0;
-            
-            while(i < organizations.length){
-                i += 1;
-                count = i + 1;
-                
+        
+            for (i = 0; i < organizations.length; i++) {
+                count = i+1;
+
                 if (i === organizations.length) {
                     break;
                 }
 
-                rows(count);
-                columns(organizations[i].Region, count);
-                columns(organizations[i].Country, count);
-                columns(organizations[i]["Country Income Level"], count);
-                columns(organizations[i]["Organization Name"], count);
-                columns(organizations[i]["Organization Type"], count);
-                columns(organizations[i]["Sectors"], count);
-                columns(organizations[i]["Description"], count);
-                columns(organizations[i]["City"], count);
-                columns(organizations[i]["State/Region"], count);
-                columns(organizations[i]["Founding Year"], count);
-                columns(organizations[i]["Size"], count);
-                columns(organizations[i]["Type of Data Used"], count);
-                columns(organizations[i]["profileID"], count);
+                createRow(count);
+                createColumn(organizations[i].Region, count);
+                createColumn(organizations[i].Country, count);
+                createColumn(organizations[i]["Country Income Level"], count);
+                createColumn(organizations[i]["Organization Name"], count);
+                createColumn(organizations[i]["Organization Type"], count);
+                createColumn(organizations[i]["Sectors"], count);
+                createColumn(organizations[i]["Description"], count);
+                createColumn(organizations[i]["City"], count);
+                createColumn(organizations[i]["State/Region"], count);
+                createColumn(organizations[i]["Founding Year"], count);
+                createColumn(organizations[i]["Size"], count);
+                createColumn(organizations[i]["Type of Data Used"], count);
+                createColumn(organizations[i]["profileID"], count);
             }
         }
        
