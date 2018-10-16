@@ -1,3 +1,8 @@
+<!--Name:Alex Bryant
+    Date: October 14th, 2018
+    CLass:INST377
+    Assignment 1 -->
+
 <html>
 <head>
 <!-- CSS -->
@@ -200,17 +205,84 @@ var organizations = [
 
 <body>
 <!-- Feel free to add empty tags. Data shouldn't be here. -->
-	<div id="org_table"></div>
+    <div id="org_table"></div>
+ 
+ 
+<button onclick="main()">Try it</button>
 
-<script>
-// outputs the first item of the organizations array. Just for testing.
-// console.log(organizations[0]); 
-console.log("test");
+    <script>
+        // outputs the first item of the organizations array. Just for testing.
+        //console.log(organizations[0]);
 
-// Your JavaScript code goes here
+            var org_table = document.createElement("TABLE");
+            org_table_table.setAttribute("id", "myTable");
+            console.log(org_table);
+            var element_id = document.getElementById("org_table");
+            console.log(element_id);
+            element_id.appendChild(org_table);
+       
+       
+        function columns(data_elements, row_id) {
+            var table_cols = document.createElement("TD");
+            var text = document.createTextNode(data_elements);
+            table_cols.appendChild(text);
+            table_rows = document.getElementById(row_id);
+            table_rows.appendChild(table_cols);
+        }
 
+         function rows(row_id) {
+            var table_rows = document.createElement("TR");
+            table_rows.setAttribute("id", row_id);
+            org_table.appendChild(table_rows);
+        }
+       
+        function main(){
+            rows("0");
+            columns("Region","0");
+            columns("Country","0");
+            columns("Country Income Level","0");
+            columns("Organization Name","0");
+            columns("Organization Type","0");
+            columns("Sectors","0");
+            columns("Description","0");
+            columns("City","0");
+            columns("State/Region","0");
+            columns("Founding Year","0");
+            columns("Size","0");
+            columns("Type of Data Used","0");
+            columns("profileID","0");
+           
+            //console.log(organizations[0].keys);
+            
+            i = 0;
+            
+            while(i < organizations.length){
+                i += 1;
+                count = i + 1;
+                
+                if (i === organizations.length) {
+                    break;
+                }
 
+                rows(count);
+                columns(organizations[i].Region, count);
+                columns(organizations[i].Country, count);
+                columns(organizations[i]["Country Income Level"], count);
+                columns(organizations[i]["Organization Name"], count);
+                columns(organizations[i]["Organization Type"], count);
+                columns(organizations[i]["Sectors"], count);
+                columns(organizations[i]["Description"], count);
+                columns(organizations[i]["City"], count);
+                columns(organizations[i]["State/Region"], count);
+                columns(organizations[i]["Founding Year"], count);
+                columns(organizations[i]["Size"], count);
+                columns(organizations[i]["Type of Data Used"], count);
+                columns(organizations[i]["profileID"], count);
+            }
+        }
+       
+ 
 </script>
-
+ 
 </body>
 </html>
